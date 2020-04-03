@@ -12,7 +12,7 @@ int main() {
     int n_cases;
     cin >> n_cases;
 
-    for(int c = 0; c < n_cases; c++) {
+    while(n_cases--) {
 
         int val, rest;
         cin >> val;
@@ -22,7 +22,7 @@ int main() {
             continue;
         }
 
-        array<int,4> dig;
+        array<int, SIZE> dig;
         dig[0] = val/1000;
         rest = val%1000;
         dig[1] = rest/100;
@@ -39,9 +39,9 @@ int main() {
         while(true) {
 
             sort(dig.begin(),dig.end());
-            array<int,4> asc = dig;
+            array<int, SIZE> asc = dig;
             reverse(dig.begin(),dig.end());
-            array<int,4> desc = dig;
+            array<int, SIZE> desc = dig;
 
             int asc_v = 1000*asc[0] + 100*asc[1] + 10*asc[2] + asc[3];
             int desc_v = 1000*desc[0] + 100*desc[1] + 10*desc[2] + desc[3];
